@@ -1,7 +1,9 @@
 import React from 'react';
 
+
 import PrivateHeader from './PrivateHeader';
 import NoteList from './NoteList';
+import Editor from './Editor'
 
 export default Link = () => {
   return (
@@ -10,6 +12,7 @@ export default Link = () => {
       <div className="page-content">
         Dashboard page content.
         <NoteList/>
+        <Editor/>
       </div>
     </div>
   );
