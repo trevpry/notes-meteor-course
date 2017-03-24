@@ -4,15 +4,15 @@ import {Accounts} from 'meteor/accounts-base';
 import {createContainer} from 'meteor/react-meteor-data';
 import {Session} from 'meteor/session';
 
-
+import Bars from 'react-icons/lib/fa/bars';
+import Close from 'react-icons/lib/fa/close';
 
 export const PrivateHeader = (props) => {
-  const navImageSrc = props.isNavOpen ? '/images/x.svg' : '/images/bars.svg';
-
   return (
     <div className="header">
       <div className="header__content">
-        <div><img className="header__menu" src={navImageSrc} onClick={props.handleNavToggle}/></div>
+        {props.isNavOpen ? <Bars className="header__menu" onClick={props.handleNavToggle}/> : <Close className="header__menu" onClick={props.handleNavToggle}/>}
+
         <h1 className="header__title">{props.title}</h1>
         <button className="button button--link-text" onClick={() => props.handleLogout()}>Logout</button>
       </div>
